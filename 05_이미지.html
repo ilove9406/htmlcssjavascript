@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_이미지.html</title>
+</head>
+<body>
+    <!-- 참조 https://www.w3schools.com/html/html_images.asp -->
+    <!-- 
+        이미지 (.jpg .gif .png) 상품 목록 png를 많이 씀
+        정적 이미지(.jpg .png)와 동적 이미지(.gif)
+        <img src="경로명+파일명">
+        <img src="경로명+파일명"/> 슬래쉬는 써도되고 안써도됨
+        
+        1)상대경로 (파일에서 파일)
+        현재 HTML문서가 저장되어 있는 폴더를 기준으로 한다.
+        (여기서는 /frontend/html 폴더)
+        images/         현재 폴더 안에서 하위폴더 images(현재 디렉토리)
+        ./images/       현재 디렉토리 (동일)
+        ../images/      부모 디렉토리(현재 폴더의 상위 폴더 images)
+        ../../images/   부모의 부모 디렉토리(현재 폴더의 상위의 상위 폴더 images)
+
+
+
+        2)절대경로 (서버단 기준)
+         http://www.itwill.co.kr/ 슬래쉬로 시작하면 절대경로
+         웹프로젝트의 ROOT (홈디렉토리)부터 시작
+
+     -->
+    
+    <h1>이미지 삽입</h1>
+    <img src="../../images/k1.png">
+    <hr>
+    <img src="../../images/k2.png">
+    <hr>
+    <img src="../../images/k3.png">
+    <hr>
+    <img src="../../images/k4.png">
+    <hr>
+
+    <img src="../../images/k1.png" width="150px" height="150px">
+    <hr>
+    <img src="../../images/k1.png" width="50%" height="50%">
+    <hr>
+    <!-- 크기에 대한 기준은 가로(width) -->
+    <img src="../../images/k5.png" width="150px">
+    <hr>
+
+    <!-- 테두리 선 -->
+    <img src="../../images/k6.png" border="2px">
+    <hr>
+    <img src="../../images/k7.png" border="0">
+    <hr>
+    <img src="../../images/k1.png" alt="뮤지" title="튜브">
+    
+</body>
+</html>
