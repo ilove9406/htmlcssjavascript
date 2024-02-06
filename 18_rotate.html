@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_rotate.html</title>
+    <style>
+      
+
+        #menu {
+            position : relative; /*부모*/
+            width: 150px;
+            height: 130px;
+            background-color: silver;
+            margin: auto;        /*수평을 기준으로 가운데 정렬*/
+            border-radius: 10px; /*모서리 라운드 처리*/
+        
+            
+           
+        
+        }
+
+        #menu:hover{ /*마우스가 올라오면*/
+            background-color: orange;
+            cursor: pointer;/*커서 손모양*/
+            
+        }
+
+        #menu>strong{
+            position: absolute;/*자식. 원래 나의 위치는 사라지고, 부모안에서만 움직임*/
+            left: 35px;
+            bottom: 15px;
+        }
+        /* 이미지 삽입 */
+        #menu>.gear{
+            position: absolute;
+            background-image: url(../images/gear-gray.png);
+            width: 40px;
+            height: 40px;
+            background-size: 40px 40px;
+           /*개인 질문 소스가 더 괜찮아보임) transition: all 0.5s linear;*/
+        }
+        /* 톱니바퀴 이미지 배치하기 */
+        #menu>.gear:nth-child(1){
+            top: 45px;
+            left: 60px;
+            /* 시계방향으로 회전 */
+            transform: rotate(30deg);
+        
+            
+        }
+        
+        #menu>.gear:nth-child(2){
+            top: 15px;
+            left: 40px;
+            
+           
+        }
+        /* transform 변형 */
+        /* transition 움직임 */
+        /* 마우스가 바탕색(실버)에 오버가 되면 이미지를 오렌지색으로 변경 */
+        #menu:hover>.gear{
+
+            background-image: url(../images/gear.png);
+            /* 부드럽게 */
+            transition:  .4s linear;/*ease |linear*/
+            
+            
+        }
+        /* 이미지 회전  (이 코드를 죽이고 개인 질문 코드를 살리면?)*/
+        #menu:hover>.gear:nth-child(1){
+            /* 시계반대방향으로 반바퀴 회전 */
+            transform: rotate(-180deg)
+             /* transition: all 0.5s linear;* 이거랑 차이가 뭐임?*/
+             
+        }
+        #menu:hover>.gear:nth-child(2){
+            transform: rotate(210deg);
+        }
+
+        /* 개인 질문 이 코드를 살린다면?) (구글링)
+        #menu:hover>.gear:nth-child(1){
+            transform: rotate(360deg);
+        }
+        #menu:hover>.gear:nth-child(2){
+            transform: rotate(360deg)
+        }
+        */
+            
+    </style>
+</head>
+<body>
+    
+    <div id="menu">
+        <div class="gear"></div>
+        <div class="gear"></div>
+        <strong>SETTINGS</strong>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>16_display.html</title>
+        <style>
+            #mydiv{
+                background-color: yellow;
+                left:30px;
+                top :400px;
+                width: 200px;
+                height: 150px;
+                position: absolute;
+                overflow: scroll;/*hidden | scroll*/
+                --display: block; /*none | block 화면출력*/
+                visibility: visible;/*hidden | visible 화면출력*/
+            }
+
+            p {color: red;}
+
+            p.ex1 {display: none;}
+            p.ex2 {display: inline;}
+            p.ex3 {display: block;}
+            p.ex4 {display: inline-block;}
+        </style>
+    </head>
+    <body>
+
+        <!-- 참조 https://www.w3schools.com/css/css_display_visibility.asp  -->
+        
+        <h1>CSS Layout - The display Property</h1>
+
+        <iframe src="14_zindex.html" frameborder="0" width="200" height="150"></iframe>
+        <hr>
+        <textarea  cols="30" rows="5">
+            윤석열 대통령이 오후 발표될 의대 정원 확대와
+            관련해 의료계의 협력을 당부했다. 파업 등 의료계 반발이 예상되는 만큼
+            의대 정원 확대의 당위성을 설파하며 파국을 피하자고 촉구한 것이다.
+
+            6일 윤 대통령은 용산 대통령실 청사에서 제 7회 국무회의를 주재하며
+            “오늘 오후에는 보건복지부 장관이 의대정원 확대에 대한 구체적인 내용을
+            국민들께 소상히 설명드릴 예정”이라고 운을 뗐다.
+
+            이어 “의사 수가 부족해서 많은 국민들이 불편을 겪고 계신다”며
+            “급속한 고령화와 보건 산업 수요에 대응할 의료인력까지 포함하면
+            2035년까지 약 1만 5000명의 의사가 더 필요한 것으로 추산되고 있다”
+            고 설명했다.
+        </textarea>
+        <hr>
+
+        <div id="mydiv">
+            구체적 내용에 대해 “국민의 생명을 지키는 필수의료 분야에서
+            의사들이 소신껏 진료할 수 있도록 ‘의료사고처리특례법’을 제정하여
+            조정전치주의와 책임보험제를 도입하고, 공공정책수가를 통해 필수 진료에
+            대한 공정한 보상체계를 마련할 것”이라고 부연했다.
+
+            윤 대통령은 “전국 어디에 살든좋은 병원과 의사에게 진료받을 수 있도록
+            지역병원에 제대로 투자하고, 지역 의대 중심으로 정원을 배정해
+            지역의료를 바로 세우겠다”며 “저와 정부는 오직 국민과 나라의 미래를
+            바라보며 흔들림 없이 의료개혁을 추진하겠다”고 다짐했다.
+
+
+        </div>
+        <br><br><br><br><br><br>
+        
+        <h3>display 세부 속성</h3>
+        <!-- display: none 처리 -->
+        <div style="display: none;">무궁화</div>
+        <!-- block 요소 : 가로 영역 전부 채움 width와 height 크기 지정 가능-->
+        <div style="background-color: red; width: 300px; height: 300px;" >오필승</div>
+        <div style="background-color: green;">코리아</div>
+        <p style="background-color: blue;">대한민국</p>
+        <header style="background-color:gold ;">아이티윌</header>
+        <section style="background-color: gray;">무궁화</section>
+        <!-- inline 요소 -->
+        <!-- 내용 만큼만 영역이 존재. 줄바꿈이 되지 않음. -->
+        <span style="background-color: beige; width: 300px; height: 300px;" >개나리</span>
+        <strong style="background-color: brown;">진달래</strong>
+        <!-- inline-block 요소 -->
+        <!-- 줄바꿈이 되지 않지만, 크기 지정 가능. block요소와 inline요소 중간 형태 -->
+        <!-- 참조 https://www.w3schools.com/cssref/pr_class_display.asp -->
+        <h2>display: none:</h2>
+        <div>
+        Lorem ipsum dolor.... <p class="ex1">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+        </div>
+
+        <h2>display: inline:</h2>
+        <div>
+        Lorem ipsum dolor.... <p class="ex2">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+        </div>
+
+        <h2>display: block:</h2>
+        <div>
+        Lorem ipsum dolor.... <p class="ex3">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+        </div>
+
+        <h2>display: inline-block:</h2>
+        <div>
+        Lorem ipsum dolor.... <p class="ex4">HELLO WORLD!</p> Vestibulum volutpat tellus diam....
+        </div>
+    </body>
+</html>
