@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>04_연습문제.html</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>연산자 연습문제</h3>
+        <script>
+
+
+
+            //문1) 임의의 정수가 짝수(2의 배수)인지 확인하시오
+
+            let num =prompt("2의 배수 확인하기 ","숫자를 입력하세요");
+            let result =num%2==0?"짝수입니다.":"홀수입니다.";          
+            document.write(result);
+            document.write("<hr>");
+            
+
+            //문2) 임의의 정수가 3의 배수인지 확인하시오   
+            let num2 =prompt("3의 배수 확인하기 ","숫자를 입력하세요");
+            let result2 =num%3==0?"3의 배수 입니다.":"3의 배수가 아닙니다.";          
+            document.write(result2);
+            document.write("<hr>");
+            //문3) 임의의 정수가 4의 배수인지 확인하시오
+            let num3 =prompt("4의 배수 확인하기 ","숫자를 입력하세요");
+            let result3 =num%4==0?"4의 배수 입니다.":"4의 배수가 아닙니다.";          
+            document.write(result3);
+            document.write("<hr>");
+            //문4) 해당 년도가 윤년인지 확인하시오     
+            let year =prompt ("윤년 확인하기", "년도를 입력하세요");
+            let result4=(year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            document.write(result4+"입니다.");
+            document.write("<hr>");
+            //문5) 임의의 정수가 2의 배수이면서 5의 배수인지 확인하시오  
+            let num5=prompt("2의 배수이면서 5의 배수인지 확인하기");
+            let result5=num5%2==0 &&num5%5==0?"2의배수이면서 5의 배수입니다." : "2의배수이면서 5의 배수가 아닙니다.";
+            document.write(result5);
+            document.write("<hr>");
+            //문6) 임의의 정수가 1 또는 3인지 확인하시오
+            let num6=prompt("임의의 정수가 1 또는 3인지 확인하기");
+            let result6=num6=== 1 || num=== 3?"임의의 정수가 1 또는 3입니다." : "임의의 정수가 1 또는 3가 아닙니다.";
+            document.write(result6);
+            document.write("<hr>");
+            //문7) 국어점수가 80 ~ 89 사이인지 확인하시오
+            let num7=prompt("주어진 국어 점수가 80부터 89까지 사이인지 확인하기:");
+            let result7=num7 >= 80 && num7 <= 89 ?"국어 점수가 80부터 89까지 입니다." : "국어 점수가 80부터 89까지가 아닙니다.";
+            document.write(result7);
+            
+            document.write("<hr>");
+            //문8) 해당 년도가 윤년인지 확인하시오
+            let num8 =prompt ("윤년 확인하기", "년도를 입력하세요");
+            let result8=(num8 % 4 === 0 && num8 % 100 !== 0) || (num8 % 400 === 0);
+            document.write(result8+"입니다.");
+            document.write("<hr>");
+
+
+        </script>
+
+    </body>
+</html>
