@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blank2</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>방문자 영문 이름 소문자에서 대문자로 변경 후 출력</h3> 
+        
+        <script>
+
+            var name=prompt("당신의 이름은?","");
+
+            var upperName=name.toUpperCase();
+            document.write(upperName,"<br>");
+
+            var Num=prompt("당신의 연락처는?","");
+            var result= Num.substring(0,Num.length-4)+"****";
+            document.write(result,"<br>");
+
+        </script>
+
+    </body>
+</html>
