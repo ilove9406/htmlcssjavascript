@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>03_요금프로그램.html</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>택시 요금 구하기</h3>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Fare Calculator</title>
+</head>
+<body>
+    <!-- const 키워드가 왜 쓰이는가?
+        0) js 변수 선언할 때 사용, 한 번 값을 할당하면 재할당 불가능
+        1) 상수로 선언된 값이 변하지 않음을 보장하기 위해
+        2) 의도적으로 변수 재할당하는 걸 방지하기 위해
+        3) 가독성과 유지보수성을 높이기 위해
+    -->
+
+    <!-- 문제) 운행거리에 따라 택시 요금 계산
+        2km까지 기본요금=900원
+        2km에서 200m초과시 초과요금 200원 가산
+    -->
+    <script>
+    /*   
+       // 기본요금과 기본요금이 적용되는 거리 초기화
+        const BASE_PAY = 900; 
+        const BASE_DISTANCE = 2; // km
+        const ADDITIONAL_PAY_PER_200M = 100; // 200m 단위로 추가되는 요금
+        
+        // 운행거리 입력
+        let distance = 4; // 운행거리 (km)
+
+        // 초기 요금 설정
+        let initPay = 900;
+
+        // 2km 초과하는 경우
+        if (distance > BASE_DISTANCE) {
+            // 초과 거리 계산 2km 더감
+            let excessDistance = distance - BASE_DISTANCE;
+            // 추가 요금 계산  1000원
+            let addPay = Math.ceil(excessDistance * 1000 / 200) * ADDITIONAL_PAY_PER_200M;
+            // 총 요금 계산 900+1000=1900원
+            let result = initPay + addPay;
+            // 결과 출력
+            document.write("운행거리: " + distance + "km<br>");
+            document.write("택시 요금: " + result + "원");
+        } else {
+            // 2km 이내인 경우
+            document.write("운행거리: " + distance + "km<br>");
+            document.write("택시 요금: " + initPay + "원");
+        }
+    */
+   
+    let distance=2900;
+    let total=0;
+    let overfee=0;
+   
+    if(distance<=2000){
+        total=900;
+    } else {
+        let exceed= distance-2000;
+        document.write("초과거리"+exceed+"<br>"); //초과거리 3000m-2000m=1000m
+        //추가 요금
+        
+        overfee=Math.ceil(exceed/200)*100;
+        total=900+overfee;
+        
+        // 1000/200 ->5
+        // 900/200  ->4.5 소수점은 올림으로 계산
+        //Math.ceil(4.5) -> 소수점 올림 함수 -> 5 
+
+    }//if end
+
+    document.write("총 운행거리 :"+distance+"<br>");
+    document.write("기본요금 : 900<br>");
+    document.write("추가요금 :"+overfee+"<br>");
+    document.write("전체요금 :"+total+"<br>");
+
+    </script>
+
+
+
+    </body>
+</html>

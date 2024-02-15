@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>01_switch문.html</title>
+
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h3>01_switch~case문</h3>
+        
+        <script>
+
+            //1. 값 : 실수형으로 경우수는 사용불가 1.23456789
+            //case 값은 반드시 순차적이지 않아도 된다.
+/*
+            switch(10){
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU");  break;
+                case 30 : document.write("BUSAN"); break;
+            }//switch end
+*/
+            //2. default : 목록에 값이 없으면 무조건 수행
+/*
+            switch(40){
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); break;
+                case 30 : document.write("BUSAN"); break;
+                default : document.write("기타..."); break;
+            } //switch end
+*/
+            //3. break 문이 없다면?
+            switch(20){
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU");
+                case 30 : document.write("BUSAN"); break;
+                default : document.write("기타..."); break;
+            } //switch end
+
+
+        </script>
+
+    </body>
+</html>
