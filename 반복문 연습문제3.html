@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>01_반복문 연습문제.html</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>반복문 연습문제</h3>
+ 
+        
+   
+        <script>
+            // 문제 1) 1~3 사이의 모든 수를 더하시오
+            let sum1 = 0;
+            for (let i = 1; i <= 3; i++) {
+                sum1 += i;
+            }
+            document.write("1~3의 합: " + sum1 + "<hr>");
+        
+            // 문제 2) 4팩토리얼값을 구하시오
+            let factorial = 1;
+            for (let i = 1; i <= 4; i++) {
+                factorial *= i;
+            }
+            document.write("4! : " + factorial + "<hr>");
+        
+            // 문제 3) 두수사이의 합을 구하시오
+            let sum2 = 0;
+            let a = 2; // 변수 a, b를 정의
+            let b = 5;
+            for (let i = a; i <= b; i++) {
+                sum2 += i;
+            }
+            document.write("두 수 합: " + sum2 + "<hr>");
+        
+            // 문제 4) 1 ~ 5사이 중에서 짝수의 갯수를 구하시오
+            let even = 0;
+            for (let i = 1; i <= 5; i++) {
+                if (i % 2 === 0) {
+                    even++;
+                }
+            }
+            document.write("1~5 사이 짝수 갯수: " + even + "<hr>");
+        
+            // 문제 5) 서기1년 ~ 2024년 사이중에서 윤년의 갯수를 구하시오
+
+            //     주의) 달력과 관련이 있는 정보는 윤년구하는 공식등은 계산식에 사용하지 말고
+            //           자바스크립트(Date객체), 자바(Calendar클래스)를 사용해야 함
+            let count = 0;
+            for (let i = 1; i <= 2024; i++) {
+                if ((i % 4 === 0 && i % 100 !== 0) || i % 400 === 0) {
+                    count++;
+                }
+            }
+            document.write("윤년 갯수: " + count + "<hr>");
+        
+            // 문제 6) x값이 10으로부터 x를 여러번 뺀 후 결과값이 음수가 되면 x를 몇번 뺐는가를 구하시오
+            let x = 10;
+            let count2 = 0;
+            while (x >= 0) {
+                x = x - 1;
+                count2++;
+            }
+            document.write("결과값이 음수가 되기 위해 x를 뺀 횟수: " + count2 + "<hr>");
+        
+            // 문제 7) 3의 배수의 누적 합이 100이 넘어가려면 3부터 어디까지 더해야 하는지 구하시오
+          
+            let sumMultiple = 0;
+            let num = 3;
+            let count3 = 0;
+            
+            while (sumMultiple <= 100) {
+                sumMultiple += num;
+                count3++;
+            }
+            
+            let minMultiple = (count3 - 1) * num + 3; // 마지막으로 더한 3의 배수를 구하기 위해 count3 - 1을 사용합니다.
+
+            document.write("누적 합이 100을 넘기는 최소 3의 배수: " + minMultiple + "<hr>");
+
+
+        </script>
+      
+        
+        
+    </body>
+</html>
