@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>05_Date객체.html</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>Date객체</h3>
+        <script>
+
+
+            //참조 https://www.w3schools.com/js/js_dates.asp
+
+            //Date 날짜 관련 내장객체
+
+            const d= new Date();    //시스템의 현재 날짜 정보 가져오기(년월일시분초)
+
+
+            document.write(d.getFullYear());
+            document.write("<br>");
+            document.write(d.getMonth()+1);   //2월이면 1반환됨 그래서 +1
+            document.write("<br>");
+            document.write(d.getDate());
+            document.write("<br>");
+
+            document.write(d.getHours());
+            document.write("<br>");
+            document.write(d.getMinutes());
+            document.write("<br>");
+            document.write(d.getSeconds());
+            document.write("<br>");
+
+            document.write(d.getDay()); //요일(0일1월2화3수4목5금6토)
+            document.write("<br>");
+
+            const days=["일","월","화","수","목","금","토"];
+            document.write(days[d.getDay()]);
+        </script>
+
+    </body>
+</html>

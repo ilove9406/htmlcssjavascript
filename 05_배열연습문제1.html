@@ -9,7 +9,7 @@
     <body>
         <h3>05_배열연습문제.html</h3>
         <script>
-
+            /*
             let num = [7, 8, -5, 9, 6];
             let sum = 0;
             let size = num.length; //5
@@ -22,7 +22,7 @@
             }
             document.write("배열 요소의 전체 합: " + sum);
 
-            
+            */
 
             //문2)음수의 갯수를 구하시오.(1)
 
@@ -39,7 +39,7 @@
             document.write("<hr>");
 
             //문3)최대값, 최솟값을 구하시오(9,-5)
-
+            //1)sort();메소드 활용
             let num3 = [7, 8, -5, 9, 6];
             num3.sort();
             document.write("최솟값"+num3[0]);
@@ -47,14 +47,43 @@
             document.write("최댓값"+num3[4]);
             document.write("<hr>");
 
+            //2)Math 객체 활용
+            document.write(Math.max(...num3));
+            document.write("<hr>");
+            document.write(Math.min(...num3));
+            document.write("<hr>");
+
+            //3)
+            let max =num[0];//최대값
+            let min =num[0];// 최소값
+            /*
+            
+            7<7         if(max<num[0])
+            7<8 max=8   if(max<num[1])  max<num[1]
+            8<-5        if(max<num[2])
+            8<9 max=9   if(max<num[3])  max<num[3]
+            0<6         if(max<num[4])
+            */
+
+            for(let i=0; i<size; i=i+1){
+                if(max<num[i]) max=num[i];
+                if(min>num[i]) min=num[i];
+            } //for end
+
+            document.write("최대값"+max);
+            document.write("<hr>");
+            document.write("최소값"+min);
+            document.write("<hr>");
+
+
             //문4) num[4] 요소의 등수를구하시오(4)
             /*
             
-            if(6<7)
-            if(6<8)
-            if(6-5)
-            if(6<9)
-            
+            if(6<7) r=1+1   if(num[4]<num[0]) r=r+1
+            if(6<8) r=2+1   if(num[4]<num[1]) r=r+1
+            if(6-5)         if(num[4]<num[2])
+            if(6<9) r=3+1   if(num[4]<num[3]) r=r+1
+            if(6<6)                if(num[4]<num[4])
             */
             let rank=1;
             let num4=[7, 8, -5, 9, 6];
@@ -66,7 +95,58 @@
             document.write("num[4]의 등수는:"+rank+"등");
             document.write("<hr>");
 
+
+            let r=1;
+            for(let i=0; i<size; i=i+1){
+                if(num[4]<num[i]){
+                    r=r+1;
+                }
+            }
+            document.write(num);
+            document.write("<hr>");
+            document.write(num[4]+"요소의 등수:"+r);
+            document.write("<hr");
+            
+
+            //문5 num 배열 요소의 각각의 등수를 모두 구하시오.
+            /*      
+            7<7     if(num[0]<num[0])   
+            7<8     if(num[0]<num[1])   rank[0]=rank[0]+1
+            7<-5    if(num[0]<num[2])
+            7<9     if(num[0]<num[3])   rank[0]=rank[0]+1
+            7<6     if(num[0]<num[4])
+
+            8<7     if(num[1]<num[0])
+            8<8     if(num[1]<num[1])
+            8<-5    if(num[1]<num[2]) 
+            8<9     if(num[1]<num[3])   rank[1]=rank[0]+1
+            8<6     if(num[1]<num[4])
+
+            -5<7    if(num[2]<num[0])   rank[2]=rank[0]+1
+            -5<8    if(num[2]<num[1])   rank[2]=rank[0]+1
+            -5<-5   if(num[2]<num[2])
+            -5<9    if(num[2]<num[3])   rank[2]=rank[0]+1
+            -5<9    if(num[2]<num[3])   rank[2]=rank[0]+1
+            -5<6    if(num[2]<num[4])   
+            
+            */
+            let num = [7, 8, -5, 9, 6];
+            let size = num.length;
+            let rank2 = [];
+
+            for (let i = 0; i < size; i++) {
+                rank2[i] = 1; // 모든 요소의 초기 등수를 1로 설정
+                for (let j = 0; j < size; j++) {
+                    if (num[i] < num[j]) {
+                        rank2[i]++;
+                    }
+                }
+            }
+
+            document.write(rank2);
+            document.write("<hr>");
         </script>
 
     </body>
 </html>
+
