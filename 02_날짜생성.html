@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>02_날짜생성.html</title>
+        <style></style>
+    </head>
+    <body>
+        <h3>Date 객쳋 날짜 세팅</h3>
+        <script>
+
+
+            //참조 https://www.w3schools.com/js/js_date_methods_set.asp
+
+
+            const someday =new Date();
+
+
+            
+
+            someday.setFullYear(1989,5,8);  //1989년 5월 8일
+            document.write(someday.getFullYear());  //1989
+            document.write("<br>"); 
+            document.write(someday.getMonth());     //5
+            document.write("<br>");
+            document.write(someday.getDate());      //8
+            document.write("<br>");
+
+            const days = ["일", "월", "화", "수", "목", "금", "토"];
+            document.write(days[someday.getDay()]);
+            document.write("<hr>");
+            //날짜 데이터 연산
+            const d=new Date();
+
+            //someday 값(1989)에서 10일 더하기
+            d.setDate(someday.getDate()+10);    //1989.5월18일
+            document.write(d.getDate());        //18
+            //someday값에서 3년 빼기
+            d.setFullYear(someday.getFullYear()-3);//1986
+
+            //someday 값에서 10개월 더하기
+            d.setMonth(someday.getMonth()+10); 
+            document.write(d.getFullYear());    //1987
+            document.write(d.getMonth());       //3
+        </script>
+
+    </body>
+</html>

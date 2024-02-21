@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_현재날짜.html</title>
+    <style>
+        #clock{
+            width: 500px;
+            height: 40px;
+            color: blue;
+            font-weight: bold;
+            font-size: 30px;
+            position: relative;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>날짜 객체</h3>
+    <div id="clock">#</div>
+    <script>
+        /*
+        문제) 날짜변수 d값을 이용해서 날짜 정보를 아래와 같이 구성해서 id=clock에 출력하시오
+        출력결과) 2024.02.21 (수) AM ,PM 구분
+        */
+
+        const d = new Date(); // 시스템의 현재 날짜 가져오기
+        
+
+//모범 풀이
+        let today="";//결과값
+        today+=d.getFullYear()+"."; //2024.
+        if(d.getMonth()+1<10){
+            today+="0"
+        }
+        today += d.getMonth()+1+".";//2024.02.
+
+        if(d.getDate()<10){
+            today+="0";
+        }
+        today+=d.getDate();         //2024.02.21
+
+        switch(d.getDay()){         //2024.02.21(수)
+            case 0:today+="(일)"; break;
+            case 1:today+="(월)"; break;
+            case 2:today+="(화)"; break;
+            case 3:today+="(수)"; break;
+            case 4:today+="(목)"; break;
+            case 5:today+="(금)"; break;
+            case 6:today+="(토)"; break;
+        }
+
+        if(d.getHours()<12){
+            today+= "AM";               //2024.02.21(수) AM 
+        } else{
+            today+="PM";
+        }
+
+        if(d.getHours()<13){
+            today+=d.getHours()+":";    //2024.02.21(수) AM 11:
+        }else{
+            today+=d.getHours()-12+":";
+        }
+
+        if(d.getMinutes()<10+":"){      //2024.02.21(수) AM 11:07:
+            today+="0"; 
+        }
+
+        today+=d.getSeconds();          //2024.02.21(수) AM 11:07:34
+
+        document.getElementById("clock").innerHTML = today;
+/*  내 풀이
+        const d = new Date(); // 시스템의 현재 날짜 가져오기
+        const days = ["일", "월", "화", "수", "목", "금", "토"];
+        const ampm = d.getHours() >= 12 ? 'PM' : 'AM'; // 시간이 오전인지 오후인지 확인
+        // 날짜 출력
+        document.write(d.getFullYear() + ".");
+        document.write((d.getMonth() + 1) + ".");
+        document.write(d.getDate() + ".");
+
+        // 요일 출력
+        document.write("(" + days[d.getDay()] + ") ");
+        
+        // AM 또는 PM 출력
+        if (d.getHours() < 12 || d.getHours() >= 0) {
+            document.write("AM");
+        } else if (d.getHours() < 24 || d.getHours() >= 12) {
+            document.write("PM");
+        } //if end
+
+        // 시간 출력
+        document.write(" " + d.getHours() + ":");
+        document.write(d.getMinutes() + ":");
+        document.write(d.getSeconds());
+*/
+        // 결과를 clock 요소에 출력
+        //document.getElementById("clock").innerHTML =result;
+    </script>
+
+</body>
+</html>
